@@ -1,0 +1,335 @@
+.submit-page {
+  min-height: 100vh;
+  padding: 2rem 0;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d1b1b 50%, #1a1a1a 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animated Background */
+.submit-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* Spiral Effect - Contained and safe */
+.spiral-container {
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  width: 60%;
+  height: 60%;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.spiral-element {
+  position: absolute;
+  background: radial-gradient(circle, rgba(255, 107, 53, 0.3) 0%, transparent 70%);
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(255, 107, 53, 0.2);
+}
+
+/* Text Particles - Fixed positioning and reduced opacity */
+.text-particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.text-particle {
+  position: absolute;
+  color: rgba(255, 107, 53, 0.2);
+  font-size: 0.8rem;
+  font-weight: 300;
+  text-transform: lowercase;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Lightning Effect */
+.lightning-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.lightning {
+  position: absolute;
+  width: 2px;
+  height: 50px;
+  background: linear-gradient(to bottom, 
+    transparent 0%, 
+    rgba(255, 107, 53, 0.8) 50%, 
+    transparent 100%);
+  border-radius: 1px;
+  box-shadow: 0 0 10px rgba(255, 107, 53, 0.5);
+}
+
+/* Magnetic Cursor */
+.magnetic-cursor {
+  position: fixed;
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, rgba(255, 107, 53, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: screen;
+  filter: blur(3px);
+}
+
+.submit-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 10;
+}
+
+.submit-content {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 4rem;
+  border-radius: 25px;
+  box-shadow: 
+    0 25px 50px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 107, 53, 0.2);
+  backdrop-filter: blur(15px);
+  position: relative;
+  z-index: 10;
+}
+
+.submit-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.submit-title {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  background: linear-gradient(45deg, #ff6b35, #d2691e, #ff8c00);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1rem;
+  font-weight: 900;
+  letter-spacing: 3px;
+  text-shadow: 0 0 30px rgba(255, 107, 53, 0.5);
+  font-family: 'Playfair Display', serif;
+}
+
+.submit-subtitle {
+  font-size: 1.3rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 0;
+  font-weight: 300;
+  letter-spacing: 2px;
+}
+
+.submission-guidelines {
+  margin-bottom: 4rem;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 3rem;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 107, 53, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.submission-guidelines h3 {
+  background: linear-gradient(45deg, #ff6b35, #d2691e);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  font-weight: 600;
+  font-family: 'Playfair Display', serif;
+  text-align: center;
+}
+
+.submission-guidelines ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 2rem;
+}
+
+.submission-guidelines li {
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(255, 107, 53, 0.2);
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.1rem;
+  position: relative;
+  padding-left: 2rem;
+  transition: all 0.3s ease;
+}
+
+.submission-guidelines li:before {
+  content: "✨";
+  color: #ff6b35;
+  font-size: 1.2rem;
+  position: absolute;
+  left: 0;
+  top: 1rem;
+}
+
+.submission-guidelines li:last-child {
+  border-bottom: none;
+}
+
+.anonymous-info {
+  background: rgba(255, 107, 53, 0.1);
+  padding: 2rem;
+  border-radius: 15px;
+  border-left: 4px solid #ff6b35;
+  margin-top: 2rem;
+}
+
+.anonymous-info h4 {
+  background: linear-gradient(45deg, #ff6b35, #d2691e);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.anonymous-info p {
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+  margin: 0;
+  font-size: 1rem;
+}
+
+.submission-link {
+  text-align: center;
+  padding: 3rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 20px;
+  border: 2px dashed rgba(255, 107, 53, 0.3);
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+}
+
+.google-form-link {
+  display: inline-block;
+  background: linear-gradient(45deg, #ff6b35, #d2691e);
+  color: white;
+  padding: 1.5rem 3rem;
+  text-decoration: none;
+  border-radius: 15px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  overflow: hidden;
+}
+
+.google-form-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.google-form-link:hover::before {
+  left: 100%;
+}
+
+.google-form-link span {
+  position: relative;
+  z-index: 2;
+}
+
+.link-description {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Interactive Elements */
+.interactive-elements {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.interactive-emoji {
+  position: absolute;
+  font-size: 1.5rem;
+  opacity: 0.6;
+  filter: drop-shadow(0 0 10px rgba(255, 107, 53, 0.3));
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .submit-container {
+    padding: 0 1rem;
+  }
+  
+  .submit-content {
+    padding: 2rem;
+  }
+  
+  .submit-title {
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+  }
+  
+  .submission-guidelines {
+    padding: 2rem;
+  }
+  
+  .submission-link {
+    padding: 2rem;
+  }
+  
+  .google-form-link {
+    padding: 1.2rem 2rem;
+    font-size: 1.1rem;
+  }
+  
+  .text-particle {
+    font-size: 0.6rem;
+  }
+  
+  .spiral-container {
+    top: 30%;
+    left: 30%;
+    width: 40%;
+    height: 40%;
+  }
+  
+  .interactive-emoji {
+    font-size: 1.2rem;
+  }
+}

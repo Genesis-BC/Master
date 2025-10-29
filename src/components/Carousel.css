@@ -1,0 +1,457 @@
+.carousel-section {
+  padding: 3rem 2rem;
+  background: linear-gradient(135deg, rgba(26, 26, 26, 0.9) 0%, rgba(45, 27, 27, 0.9) 100%);
+  position: relative;
+  overflow: hidden;
+  min-height: auto;
+}
+
+.carousel-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 20%, rgba(255, 107, 53, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(210, 105, 30, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.carousel-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.carousel-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 700;
+  background: linear-gradient(45deg, #ff6b35, #d2691e);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.5rem;
+  letter-spacing: 3px;
+  text-shadow: 0 0 30px rgba(255, 107, 53, 0.3);
+}
+
+.carousel-subtitle {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 2rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.carousel-wrapper {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  border-radius: 25px;
+  overflow: hidden;
+  box-shadow: 
+    0 25px 50px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(255, 107, 53, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  perspective: 1000px;
+}
+
+.carousel-slides-container {
+  position: relative;
+  height: 400px;
+  overflow: hidden;
+}
+
+.carousel-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 25px;
+}
+
+.slide-content {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.slide-image {
+  flex: 1;
+  height: 100%;
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.image-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #ff6b35, #d2691e);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-radius: 15px;
+}
+
+.image-text {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  z-index: 2;
+  position: relative;
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1));
+  border-radius: 15px;
+}
+
+.slide-info {
+  flex: 1;
+  text-align: left;
+  color: white;
+  padding: 1rem;
+}
+
+.slide-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 20px rgba(255, 107, 53, 0.3);
+}
+
+.slide-description {
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 1.5rem;
+  font-weight: 300;
+}
+
+.slide-button {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 50px;
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.slide-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.slide-button:hover::before {
+  left: 100%;
+}
+
+/* Navigation Buttons */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 107, 53, 0.9);
+  border: none;
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 2rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.carousel-btn:hover {
+  background: rgba(255, 107, 53, 1);
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 10px 30px rgba(255, 107, 53, 0.4);
+}
+
+.carousel-btn.prev {
+  left: 30px;
+}
+
+.carousel-btn.next {
+  right: 30px;
+}
+
+/* Dots Indicator */
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-top: 1.5rem;
+  padding: 0.5rem 0;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.dot.active {
+  background: #ff6b35;
+  border-color: #ff6b35;
+  box-shadow: 0 0 20px rgba(255, 107, 53, 0.5);
+}
+
+.dot:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 15px rgba(255, 107, 53, 0.3);
+}
+
+/* Auto-play Controls */
+.carousel-controls {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 1rem;
+}
+
+.auto-play-btn {
+  padding: 0.8rem 1.5rem;
+  background: rgba(255, 107, 53, 0.2);
+  border: 2px solid rgba(255, 107, 53, 0.5);
+  border-radius: 25px;
+  color: #ff6b35;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.auto-play-btn.active {
+  background: rgba(255, 107, 53, 0.3);
+  border-color: #ff6b35;
+  color: white;
+  box-shadow: 0 5px 15px rgba(255, 107, 53, 0.3);
+}
+
+.auto-play-btn:hover {
+  background: rgba(255, 107, 53, 0.4);
+  border-color: #ff6b35;
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .carousel-section {
+    padding: 2rem 1rem;
+  }
+
+  .carousel-title {
+    font-size: clamp(2rem, 5vw, 2.5rem);
+    margin-bottom: 0.5rem;
+  }
+
+  .carousel-subtitle {
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    margin-bottom: 1.5rem;
+  }
+
+  .carousel-slides-container {
+    height: 500px;
+  }
+  
+  .slide-content {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+  
+  .slide-info {
+    text-align: center;
+    padding: 0.5rem;
+  }
+
+  .slide-title {
+    font-size: clamp(1.3rem, 4vw, 1.8rem);
+    margin-bottom: 0.8rem;
+  }
+
+  .slide-description {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+
+  .slide-button {
+    padding: 0.7rem 1.3rem;
+    font-size: 0.85rem;
+  }
+  
+  .carousel-btn {
+    width: 45px;
+    height: 45px;
+    font-size: 1.5rem;
+  }
+  
+  .carousel-btn.prev {
+    left: 10px;
+  }
+  
+  .carousel-btn.next {
+    right: 10px;
+  }
+  
+  .carousel-dots {
+    margin-top: 1rem;
+    gap: 0.6rem;
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+  }
+
+  .carousel-controls {
+    margin-top: 1rem;
+  }
+
+  .auto-play-btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-section {
+    padding: 1.5rem 0.5rem;
+  }
+
+  .carousel-title {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    letter-spacing: 2px;
+  }
+
+  .carousel-subtitle {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+  }
+
+  .carousel-slides-container {
+    height: 550px;
+  }
+  
+  .slide-content {
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .slide-image {
+    height: 200px;
+  }
+
+  .image-text {
+    font-size: 1.2rem;
+  }
+
+  .slide-info {
+    padding: 0.5rem;
+  }
+  
+  .slide-title {
+    font-size: 1.3rem;
+    margin-bottom: 0.6rem;
+  }
+  
+  .slide-description {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin-bottom: 0.8rem;
+  }
+
+  .slide-button {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.8rem;
+  }
+  
+  .carousel-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+
+  .carousel-btn.prev {
+    left: 5px;
+  }
+
+  .carousel-btn.next {
+    right: 5px;
+  }
+
+  .carousel-dots {
+    gap: 0.5rem;
+    margin-top: 0.8rem;
+  }
+
+  .dot {
+    width: 8px;
+    height: 8px;
+  }
+
+  .carousel-controls {
+    margin-top: 0.8rem;
+  }
+
+  .auto-play-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+  }
+}

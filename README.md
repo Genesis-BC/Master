@@ -1,44 +1,100 @@
-# Genesis Literary Magazine
-Boston College's First-Ever First-Generation Magazine
+# Genesis - First-Gen Literary Magazine
 
-We are tremendously proud to present Genesis, the first literary and art magazine created by and for first-generation students at Boston College. This project is more than a website — it is a space to uplift voices, celebrate creativity, and build community.
+A beautiful, modern website for the Genesis literary magazine at Boston College, featuring a Prometheus-inspired blood orange theme.
 
-# About This Project
-This repository contains the source code for the Genesis magazine website. The site showcases student submissions, featured works, and information about our team and mission.
+## Features
 
-Genesis represents not just artistic expression, but also the resilience and brilliance of first-generation students who are shaping the future of Boston College.
+- **Responsive Design**: Works perfectly on desktop, tablet, and mobile devices
+- **Smooth Scrolling**: Elegant navigation between sections
+- **Photo Carousel**: Showcase your poems, pictures, and artwork
+- **Interactive Forms**: Contact and submission forms with validation
+- **Prometheus Theme**: Blood orange color scheme with flame effects
+- **Modern UI**: Clean, professional design with smooth animations
 
-# Developer Guide
-To keep our `main` branch stable (the live app), all changes must go through **feature branches + pull requests**.
+## Sections
 
-### 1. Clone the Repository
+1. **Home**: Hero section with Genesis title and scrollable layout
+2. **About Us**: Information about the magazine and community
+3. **Contact**: Contact form and information
+4. **Submit**: Submission form for new works
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (version 14 or higher)
+- npm or yarn
+
+### Installation
+
+1. Install dependencies:
 ```bash
-git clone https://github.com/Genesis-BC/Master.git
-cd Master
+npm install
 ```
 
-### 2. Create a New Branch from main
+2. Start the development server:
 ```bash
-git checkout main
-git pull origin main   # make sure your main is up-to-date
-git checkout -b feature-name
+npm start
 ```
 
-### 3. Make Your Changes
-Edit files, add features, fix bugs, or update documentation.
+3. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-### 4. Commit Your Work
+### Building for Production
+
 ```bash
-git add <Your-file>
-git commit -m "Add: short description of what you changed"
+npm run build
 ```
 
-### 5. Push Your Branch
-```bash
-git push origin your-feature-name
+This builds the app for production to the `build` folder.
+
+## Customization
+
+### Adding Your Logo
+
+1. Place your logo file in the `public` folder
+2. Update the logo reference in `src/components/Navigation.js`
+
+### Adding Your Images
+
+1. Replace the sample images in the carousel with your own
+2. Update the `images` array in `src/components/Carousel.js`
+
+### Customizing Colors
+
+The blood orange theme can be customized by updating the CSS variables in the component files:
+- Primary: `#ff6b35`
+- Secondary: `#d2691e`
+- Accent: `#ff8c00`
+
+## File Structure
+
+```
+src/
+├── components/
+│   ├── Navigation.js & .css
+│   ├── Hero.js & .css
+│   ├── Carousel.js & .css
+│   ├── About.js & .css
+│   ├── Contact.js & .css
+│   └── Submit.js & .css
+├── App.js & .css
+├── index.js & .css
+└── public/
+    └── index.html
 ```
 
-### 6. Open a Pull Request
-* Go to the repo on GitHub.
-* You’ll see a prompt to open a Pull Request (PR).
-* PRs will be reviewed before merging into main.
+## Technologies Used
+
+- React 18
+- CSS3 with modern features
+- Responsive design principles
+- Smooth scrolling and animations
+- Form validation
+
+## Contributing
+
+This website is designed specifically for the Genesis literary magazine at Boston College. Feel free to customize it for your needs!
+
+## License
+
+This project is created for the Genesis literary magazine community.
