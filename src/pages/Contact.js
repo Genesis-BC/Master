@@ -31,7 +31,6 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Mailing list signup:', formData);
     alert('Thank you for joining our mailing list!');
     setFormData({ name: '', email: '' });
   };
