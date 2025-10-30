@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { motion, useAnimation } from 'framer-motion';
+import { motion } from 'framer-motion';
 import './About.css';
 
 const About = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const controls = useAnimation();
 
   useEffect(() => {
     const handleMouseMove = (e) => {

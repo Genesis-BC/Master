@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { motion, useAnimation } from 'framer-motion';
+import { motion } from 'framer-motion';
 import './Contact.css';
 
 const Contact = () => {
@@ -9,7 +9,6 @@ const Contact = () => {
   });
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isTyping, setIsTyping] = useState(false);
-  const controls = useAnimation();
 
   useEffect(() => {
     const handleMouseMove = (e) => {
